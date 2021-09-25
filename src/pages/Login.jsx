@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Redirect } from "react-router-dom"
-import constants from "../redux/constants"
 import styles from "../styles/login.module.css"
 import { loginAC } from "../redux/actions/login"
 
