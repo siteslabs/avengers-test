@@ -44,7 +44,7 @@ const Login = () => {
   }
 
   if (isAuthorized) {
-    return <Redirect to="/main" />
+    return <Redirect to="/add" />
   }
 
   return (
