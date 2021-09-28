@@ -4,12 +4,12 @@ import { bankData } from "../data"
 import { useDispatch, useSelector } from "react-redux"
 import { addTransactionAC } from "../redux/actions/transactions"
 
-const initialTrnsaction = {
-  amount: "",
-  bankName: bankData[0].name,
-}
+const AddTransaction = () => {
+  const initialTrnsaction = {
+    amount: "",
+    bankName: bankData[0].name,
+  }
 
-const addTransaction = () => {
   const [transaction, setTransaction] = useState(initialTrnsaction)
   const banks = useSelector((state) => state.transactionsReducer.banks)
   const dispatch = useDispatch()
@@ -24,6 +24,11 @@ const addTransaction = () => {
   }
   const handleSubmit = (e) => {
     e.preventDefault()
+    console.log(
+      banks,
+      transaction.bankName,
+      banks.find((bank) => bank.name === transaction.bankName).id
+    )
     const newTransaction = {
       id: Date.now(),
       bankId: banks.find((bank) => bank.name === transaction.bankName).id,
@@ -70,4 +75,4 @@ const addTransaction = () => {
   )
 }
 
-export default addTransaction
+export default AddTransaction
