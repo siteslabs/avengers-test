@@ -4,12 +4,12 @@ import { bankData } from "../data"
 import { useDispatch, useSelector } from "react-redux"
 import { addTransactionAC } from "../redux/actions/transactions"
 
-const AddTransaction = () => {
-  const initialTrnsaction = {
-    amount: "",
-    bankName: bankData[0].name,
-  }
+const initialTrnsaction = {
+  amount: "",
+  bankName: bankData[0].name,
+}
 
+const AddTransaction = () => {
   const [transaction, setTransaction] = useState(initialTrnsaction)
   const banks = useSelector((state) => state.transactionsReducer.banks)
   const dispatch = useDispatch()
